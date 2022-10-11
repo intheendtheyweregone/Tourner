@@ -1,7 +1,7 @@
 # Tourner[^1]
 A Go-powered ShareX "round-robin"[^2] uploader
 
-[^1]: "Tourner" is a French Word that means to turn or rotate in English.
+[^1]: "Tourner" is a French Word that means to turn or rotate.
 [^2]: This is a simple explanation, but this isn't really round-robin anything.
 
 <br>
