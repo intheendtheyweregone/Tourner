@@ -1,5 +1,7 @@
 # Tourner
-A Go-powered ShareX round-robin uploader
+A Go-powered ShareX "round-robin"[^1] uploader
+
+[^1]: This is a simple explanation, but this isn't really round-robin anything.
 
 <br>
 <img src="https://user-images.githubusercontent.com/114883905/195212649-a452f58e-cef9-4270-8428-ab8e593c3700.png" height="150" />
