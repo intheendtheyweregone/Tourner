@@ -15,7 +15,6 @@ func selectSite() string {
 		"https://l.trs.tn/api/upload",
 		"https://take-me-to.space/api/upload",
 		"https://safe.waifuhunter.club/api/upload",
-		"https://drive.arumoon.ru/api/upload",
 	)
 
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
