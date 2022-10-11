@@ -11,7 +11,7 @@ Currenly Tourner only supports LoliSafe, which I believe is referred to as versi
 
 
 ## It's Purpose?
-I really didn't like the idea of keeping all of my funny meme screenshots on one shitty server in Tunisia and liked the idea of having screenshots spread out across various different hosts as using only one can definitely make it easier for one instance owner to track everything that you upload, with this they'll get bits and pieces, but likely not enough to piece together a full picture. In the future I also plan to add the ability to specify a proxy/proxies that can be applied to further improve your privacy, as ShareX on Windows does not currently support SOCKS Proxies.
+I really didn't like the idea of keeping all of my funny meme screenshots on one shitty server in Tunisia, and liked the idea of having screenshots spread out across various different hosts as using only one can definitely make it easier for one instance owner to track everything that you upload, with this they'll get bits and pieces, but likely not enough to piece together a full picture. In the future I also plan to add the ability to specify a proxy/proxies that can be applied to further improve your privacy, as ShareX on Windows does not currently support SOCKS Proxies in the first place.
 
 
 ## Install
