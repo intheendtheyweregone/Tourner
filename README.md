@@ -5,7 +5,7 @@ A Go-powered ShareX round-robin uploader
 <img src="https://user-images.githubusercontent.com/114883905/195212649-a452f58e-cef9-4270-8428-ab8e593c3700.png" height="150" />
 
 ## How it works?
-Tourner proxies requests from a local web server to variousLoliSafe (now ChibiSafe) instances, selecting, at random, an instance each time a request to upload a file is made to the "/upload" endpint.
+Tourner proxies requests from a local web server to various LoliSafe (now ChibiSafe) instances, selecting, at random, an instance each time a request to upload a file is made to the "/upload" endpint.
 
 Currenly Tourner only supports LoliSafe, which I believe is referred to as version 3.x of ChibiSafe, but as I continue to work on this project 4.X will be supported, as well as other file uploaders in general.
 
