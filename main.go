@@ -10,11 +10,13 @@ import (
 
 func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
+	// Denies request if not a POST Request.
 	if r.Method != "POST" {
 		fmt.Fprintf(w, "This endpoint requires a POST Request. \n")
 		return
 	}
 
+	// Reading File
 	file, handler, err := r.FormFile("files[]")
 	if err != nil {
 		fmt.Fprintf(w, "There was an error: %v.", err)
@@ -23,7 +25,9 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
+	// Calls method to randomly select site
 	site := selectSite()
+
 	body, err := sharex.HandleUpload(file, handler, site)
 	if err != nil {
 		fmt.Fprintf(w, "There was an error: %v", err)
@@ -36,9 +40,13 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Handle CLI Flags
+	portArgument := handleCLI()
 
+	// Create route for uploading
 	http.HandleFunc("/upload", uploadHandler)
 
-	fmt.Println("Started...")
-	log.Fatal(http.ListenAndServe("127.0.0.1:8080", nil))
+	fmt.Printf("[Tourner] Started successfully on port %v", *portArgument)
+	// Start web server
+	log.Fatal(http.ListenAndServe("127.0.0.1:"+*portArgument, nil))
 }
