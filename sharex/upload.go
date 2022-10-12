@@ -9,6 +9,7 @@ import (
 	"net/http"
 )
 
+// Upload the file from the local server to the destination origin.
 func HandleUpload(f multipart.File, h *multipart.FileHeader, s string) ([]byte, error) {
 
 	buf := new(bytes.Buffer)
@@ -34,6 +35,7 @@ func HandleUpload(f multipart.File, h *multipart.FileHeader, s string) ([]byte, 
 	req, _ := http.NewRequest("POST", s, buf)
 
 	req.Header.Add("authority", s)
+	// * Will need to change dynamically for ChibiSafe
 	req.Header.Add("accept", "accept: application/vnd.chibisafe.json")
 	req.Header.Add("accept-language", "en-US,en;q=0.8")
 	req.Header.Add("cache-control", "no-cache")
