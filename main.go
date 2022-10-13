@@ -26,9 +26,9 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 	defer file.Close()
 
 	// Calls method to randomly select site
-	site := selectSite()
+	siteType, site := selectSite()
 
-	body, err := sharex.HandleUpload(file, handler, site)
+	body, err := sharex.ProcessUpload(file, handler, site, siteType)
 	if err != nil {
 		fmt.Fprintf(w, "There was an error: %v", err)
 		return

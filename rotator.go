@@ -7,18 +7,18 @@ import (
 )
 
 // Randomly select one of the slices inside of our map and then return it's contents
-func pick(m map[string][]string) []string {
+func pick(m map[string][]string) (string, []string) {
 	k := rand.Intn(len(m))
-	for _, x := range m {
+	for s, x := range m {
 		if k == 0 {
-			return x
+			return s, x
 		}
 		k--
 	}
 	panic("unreachable")
 }
 
-func selectSite() string {
+func selectSite() (string, string) {
 	sites := make(map[string][]string)
 
 	sites["LoliSafe"] = []string{"https://l.trs.tn/api/upload",
@@ -26,11 +26,10 @@ func selectSite() string {
 		"https://safe.waifuhunter.club/api/upload"}
 
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-	p := pick(sites)
+	hostType, p := pick(sites)
 	randomIndex := rand.Intn(len(p))
-	fmt.Println(rand.Intn(len(p)))
 	randomSitePicked := p[randomIndex]
 	fmt.Printf("\n [Tourner] randomly selected: %v for upload", randomSitePicked)
-	return randomSitePicked
+	return hostType, randomSitePicked
 
 }
