@@ -1,24 +1,35 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
 
-// function yanked from stackoverflow, in the futue will make it fetch something from github
-// with an updated list of my keeping.
-// or custom lists via txt so that users can decide which instances they want to rotate between
+// Randomly select one of the slices inside of our map and then return it's contents
+func pick(m map[string][]string) (string, []string) {
+	k := rand.Intn(len(m))
+	for s, x := range m {
+		if k == 0 {
+			return s, x
+		}
+		k--
+	}
+	panic("unreachable")
+}
 
-func selectSite() string {
-	sites := make([]string, 0)
-	sites = append(sites,
-		"https://l.trs.tn/api/upload",
+func selectSite() (string, string) {
+	sites := make(map[string][]string)
+
+	sites["LoliSafe"] = []string{"https://l.trs.tn/api/upload",
 		"https://take-me-to.space/api/upload",
-		"https://safe.waifuhunter.club/api/upload",
-	)
+		"https://safe.waifuhunter.club/api/upload"}
 
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
-
-	return sites[rand.Intn(len(sites))]
+	hostType, p := pick(sites)
+	randomIndex := rand.Intn(len(p))
+	randomSitePicked := p[randomIndex]
+	fmt.Printf("\n [Tourner] randomly selected: %v for upload", randomSitePicked)
+	return hostType, randomSitePicked
 
 }
