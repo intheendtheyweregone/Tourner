@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-// Upload the file from the local server to the destination origin.
+// Upload the local file to the chosen server
 func HandleUpload(f multipart.File, h *multipart.FileHeader, s string) ([]byte, error) {
 
 	buf := new(bytes.Buffer)
