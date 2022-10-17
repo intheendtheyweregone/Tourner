@@ -1,8 +1,7 @@
 # Tourner[^1]
-A Go-powered ShareX "round-robin"[^2] uploader
+A Go-Powered ShareX Destination Rotator written in Go
 
 [^1]: "Tourner" is a French Word that means to turn or rotate.
-[^2]: This is a simple explanation, but this isn't really round-robin anything, and could be more simply described as a rotation system..
 
 <br>
 <img src="https://user-images.githubusercontent.com/114883905/195212649-a452f58e-cef9-4270-8428-ab8e593c3700.png" height="150" />
